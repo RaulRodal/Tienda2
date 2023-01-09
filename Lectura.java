@@ -9,8 +9,6 @@ import java.util.Scanner;
  */
 public class Lectura {
     
-    public static final int ULT = 6;
-    
      public static String leeCadena(Scanner scan,String mensaje){
         System.out.println(mensaje);
         return (scan.nextLine());
@@ -25,32 +23,17 @@ public class Lectura {
         }while (!Medico.esValidoNif(ret));
         return ret;
     }
-
-    public static Medico.TipoMedico leeTipo(Scanner scan){
-        int op;
-        do{
-            System.out.println("Seleccione el tipo: ");
-            for (int i = 0; i < Medico.TipoMedico.values().length; i++) {
-                
-                System.out.println((i+1)+".- "+Medico.TipoMedico.values()[i].toString());
-                
-            }
-            op=scan.nextInt();
-        }while (op<1 || op>Medico.TipoMedico.values().length);
-        scan.nextLine();
-        return Medico.TipoMedico.values()[op-1];
-    }
-    public static Medico leeMedico(Scanner scan){
+    
+    public static Cliente leeCliente(Scanner scan){
         String nombre;
-        String especialidad;
-        Medico.TipoMedico tipo;
-        String nif;
+        int telefono;
+        String dni;
+        String direccion;
         
         nombre = leeCadena(scan,"Nombre: ");
-        especialidad = leeCadena(scan,"Especialidad: ");
-        tipo = leeTipo(scan);
-        
-        nif = leeNif(scan);
+        telefono = leeEntero(scan,"Telefono: ");
+        direccion = leeCadena(scan,"Direccion: ");
+        dni = leeNif(scan);
                 
         return new Medico(nombre, especialidad, tipo, nif);
     }
