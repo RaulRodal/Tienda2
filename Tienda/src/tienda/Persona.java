@@ -10,7 +10,7 @@ public class Persona {
     private String dni;
     private String direccion;
 
-    public Persona (String nombre, int telefono, int dni, String direccion) {
+    public Persona (String nombre, int telefono, String dni, String direccion) {
         this.nombre = nombre;
         this.telefono = telefono;
         this.dni = dni;
@@ -25,12 +25,12 @@ public class Persona {
         this.telefono = telefono;
     }
 
-    public void setDni(int dni) {
+    public void setDni(String dni) {
         this.dni = dni;
     }
 
     public void setDireccion(String direccion) {
-        this.dirección = dirección;
+        this.direccion = direccion;
     }
 
     public String getNombre() {
@@ -41,11 +41,11 @@ public class Persona {
         return telefono;
     }
 
-    public int getDni() {
+    public String getDni() {
         return dni;
     }
 
     public String getDireccion() {
-        return dirección;
+        return direccion;
     }
 }
