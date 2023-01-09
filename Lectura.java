@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Clases;
 
 import java.util.InputMismatchException;
@@ -25,7 +21,7 @@ public class Lectura {
         
         do{
            ret=leeCadena(scan,"NIF: ") ;
-           if (!Medico.esValidoNif(ret)) System.out.println("ERROR. Introduzca un NIF válido");
+           if (!Medico.esValidoNif(ret)) System.out.println("ERROR. Introduzca un NIF vÃ¡lido");
         }while (!Medico.esValidoNif(ret));
         return ret;
     }
@@ -71,7 +67,7 @@ public class Lectura {
                 error = false;
                 
             } catch (InputMismatchException e) {
-                System.out.println("ERROR.Sólo se admiten números.! " + e.toString());
+                System.out.println("ERROR.SÃ³lo se admiten nÃºmeros.! " + e.toString());
                
             } finally {
                 scan.nextLine();
