@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package tienda.Clases;
 
 /**
@@ -12,15 +16,23 @@ public class Productos {
     private String nombre;
     private String numSerie;
     private String marca;
-    
+    private int cantidad;
 
-    public Productos(String nombre, String numSerie, String marca) {
+    public Productos(String nombre, String numSerie, String marca, int cantidad) {
         this.nombre = nombre;
         this.numSerie = numSerie;
         this.marca = marca;
+        this.cantidad = cantidad;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
     }
     
-
     public String getNombre() {
         return nombre;
     }
@@ -57,3 +69,4 @@ public class Productos {
     }
     
 }
+
