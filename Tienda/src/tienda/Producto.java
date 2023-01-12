@@ -17,7 +17,18 @@ public class Producto {
     private String numSerie;
     private String marca;
     private int cantidad;
+    private int precio;
+    private boolean borrado; 
 
+    public Producto(String nombre, String numSerie, String marca, int cantidad, int precio, boolean borrado) {
+        this.nombre = nombre;
+        this.numSerie = numSerie;
+        this.marca = marca;
+        this.cantidad = cantidad;
+        this.precio = precio;
+        this.borrado = borrado;
+    }
+    
     public Producto(String nombre, String numSerie, String marca, int cantidad) {
         this.nombre = nombre;
         this.numSerie = numSerie;
@@ -55,6 +66,14 @@ public class Producto {
 
     public void setMarca(String marca) {
         this.marca = marca;
+    }
+    
+    public int getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(int precio) {
+        this.precio = precio;
     }
 
     @Override
