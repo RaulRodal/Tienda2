@@ -4,13 +4,13 @@
  */
 package tienda;
 
-public class Persona {
+public class Cliente {
     private String nombre;
     private int telefono;
     private String dni;
     private String direccion;
 
-    public Persona (String nombre, int telefono, String dni, String direccion) {
+    public Cliente (String nombre, int telefono, String dni, String direccion) {
         this.nombre = nombre;
         this.telefono = telefono;
         this.dni = dni;
