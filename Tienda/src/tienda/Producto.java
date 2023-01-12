@@ -12,9 +12,8 @@ public class Producto {
         public static enum Categoria {
         ORDENADOR, TELEFONOS, LAVADORAS, FRIGORIFICOS, COCINAS, TELEVISIONES 
     };
-    
+    private static int NumSerie = 0;
     private String nombre;
-    private String numSerie;
     private String marca;
     private int cantidad;
     private int precio;
@@ -22,18 +21,10 @@ public class Producto {
 
     public Producto(String nombre, String numSerie, String marca, int cantidad, int precio, boolean borrado) {
         this.nombre = nombre;
-        this.numSerie = numSerie;
         this.marca = marca;
         this.cantidad = cantidad;
         this.precio = precio;
         this.borrado = borrado;
-    }
-    
-    public Producto(String nombre, String numSerie, String marca, int cantidad) {
-        this.nombre = nombre;
-        this.numSerie = numSerie;
-        this.marca = marca;
-        this.cantidad = cantidad;
     }
 
     public int getCantidad() {
@@ -52,14 +43,6 @@ public class Producto {
         this.nombre = nombre;
     }
 
-    public String getNumSerie() {
-        return numSerie;
-    }
-
-    public void setNumSerie(String numSerie) {
-        this.numSerie = numSerie;
-    }
-
     public String getMarca() {
         return marca;
     }
@@ -75,16 +58,32 @@ public class Producto {
     public void setPrecio(int precio) {
         this.precio = precio;
     }
+        public static int getNumSerie() {
+        return NumSerie;
+    }
+
+    public static void setNumSerie(int NumSerie) {
+        Producto.NumSerie = NumSerie;
+    }
+
+    public boolean isBorrado() {
+        return borrado;
+    }
+
+    public void setBorrado(boolean borrado) {
+        this.borrado = borrado;
+    }
+    
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Productos{");
         sb.append("nombre=").append(nombre);
-        sb.append(", numSerie=").append(numSerie);
         sb.append(", marca=").append(marca);
         sb.append('}');
         return sb.toString();
     }
-    
+
+
 }
