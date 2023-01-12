@@ -56,7 +56,7 @@ public class Lectura {
         return ret;
     }
     
-    public static Persona leeCliente(Scanner scan){
+    public static Cliente leeCliente(Scanner scan){
         String nombre;
         int telefono;
         String dni;
@@ -67,7 +67,7 @@ public class Lectura {
         direccion = leeCadena(scan,"Direccion: ");
         dni = leeNif(scan);
                 
-        return new Persona (nombre, telefono, dni, direccion);
+        return new Cliente (nombre, telefono, dni, direccion);
     }
      public static int leeEntero(Scanner scan,String msj) {
         int ret;
