@@ -17,11 +17,23 @@ import java.util.Scanner;
  */
 public class Lectura {
     
+    public static final int ULT = 8;
+    
+    /**
+     * devuelve una cadena que se escriba por teclado
+     * @param scan
+     * @param mensaje
+     * @return 
+     */
      public static String leeCadena(Scanner scan,String mensaje){
         System.out.println(mensaje);
         return (scan.nextLine());
     }
-     
+     /**
+      * Comprueba si el DNI esta bien formado y devuelve "true" o "false"
+      * @param nif
+      * @return 
+      */
     public static boolean esValidoNif(String nif) {
         String sDni;
         boolean correcto;
@@ -45,7 +57,12 @@ public class Lectura {
         }
         return correcto;
     }
-    
+    /**
+     * Obliga a introducir un DNI valido usando "leeCadena" y "esValidoNif",
+     *  devuelve el String que introduzcamos por teclado
+     * @param scan
+     * @return 
+     */
     public static String leeNif(Scanner scan){
         String ret;
         
@@ -55,7 +72,11 @@ public class Lectura {
         }while (!esValidoNif(ret));
         return ret;
     }
-    
+    /**
+     * //método para leer un producto y crear un objeto de clase producto. Devuelve un objeto producto.
+     * @param scan
+     * @return 
+     */
      public static Producto leeProducto(Scanner scan){
         String nombre;
         Producto.Categoria categoria;
@@ -63,15 +84,19 @@ public class Lectura {
         int cantidad;
         int precio;
         
-        nombre = leeCadena(scan,"Nombre: ");
         categoria = leeCategoria(scan);
+        nombre = leeCadena(scan,"Nombre: ");
         marca = leeCadena(scan,"Marca: ");
         cantidad = leeEntero(scan,"Cantidad: ");
         precio = leeEntero(scan,"Precio: ");
                 
         return new Producto(nombre, categoria, marca, cantidad, precio);
     }
-     
+     /**
+     * //metodo que despliega un menu para seleccionar una categoría de las disponibles. Devuelve una categoría de producto.
+     * @param scan
+     * @return 
+     */
      public static Producto.Categoria leeCategoria(Scanner scan){
         int op;
         do{
@@ -86,6 +111,12 @@ public class Lectura {
         scan.nextLine();
         return Producto.Categoria.values()[op-1];
     }
+     
+     /**
+     * //método para leer un cliente y crear un objeto de clase cliente. Devuelve un objeto Cliente.
+     * @param scan
+     * @return 
+     */
     public static Cliente leeCliente(Scanner scan){
         String nombre;
         int telefono;
@@ -99,6 +130,13 @@ public class Lectura {
                 
         return new Cliente (nombre, telefono, dni, direccion);
     }
+    
+     /**
+      * //se pasa un entero y Comprueba que el dato que se introduce no es erroneo. Devuelve ese entero.
+      * @param scan
+      * @param msj
+      * @return 
+      */
      public static int leeEntero(Scanner scan,String msj) {
         int ret;
         boolean error;
@@ -119,21 +157,27 @@ public class Lectura {
         } while (error);
         return ret;
     }
-     
+     /**
+      * //menu que nos da distintas opciones para los productos
+      * @param scan
+      * @return 
+      */
      public static int menuPrincipal (Scanner scan){
          int op;
          
          do {             
              System.out.println("1.- Listar productos");
-             System.out.println("2.- Instertar productos");
-             System.out.println("3.- Buscar producto por codigo");
+             System.out.println("2.- Insertar productos");
+             System.out.println("3.- Buscar producto por numero de serie");
              System.out.println("4.- Buscar producto por nombre");
-             System.out.println("5.- Elimina producto por codigo");
-             System.out.println("6.- Salir");
+             System.out.println("5.- Elimina producto por numero de serie");
+             System.out.println("6.- Listar borrados");
+             System.out.println("7.- Restar cantidad a producto");
+             System.out.println("8.- Salir");
              op=leeEntero(scan, "");
-             } while (op<1);
-         /**} while (op<1 || op>ULT);
-         */
+             /**} while (op<1);*/
+            } while (op<1 || op>ULT);
+         
          return op;
      }
 }
